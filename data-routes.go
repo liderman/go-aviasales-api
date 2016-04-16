@@ -8,8 +8,8 @@ type Route struct {
 	ArrivalAirportIata   string   `json:"arrival_airport_iata" bson:"arrival_airport_iata"`
 	ArrivalAirportIcao   string   `json:"arrival_airport_icao" bson:"arrival_airport_icao"`
 	Codeshare            bool     `json:"codeshare" bson:"codeshare"`
-	transfers            int      `json:"transfers" bson:"transfers"`
-	planes               []string `json:"planes" bson:"planes"`
+	Transfers            int      `json:"transfers" bson:"transfers"`
+	Planes               []string `json:"planes" bson:"planes"`
 }
 
 // DataRoutes a list of routes from the database.
