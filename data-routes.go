@@ -1,15 +1,15 @@
 package aviasales
 
 type Route struct {
-	AirlineIata          string   `json:"airline_iata"`
-	AirlineIcao          string   `json:"airline_icao"`
-	DepartureAirportIata string   `json:"departure_airport_iata"`
-	DepartureAirportIcao string   `json:"departure_airport_icao"`
-	ArrivalAirportIata   string   `json:"arrival_airport_iata"`
-	ArrivalAirportIcao   string   `json:"arrival_airport_icao"`
-	Codeshare            bool     `json:"codeshare"`
-	transfers            int      `json:"transfers"`
-	planes               []string `json:"planes"`
+	AirlineIata          string   `json:"airline_iata" bson:"airline_iata"`
+	AirlineIcao          string   `json:"airline_icao" bson:"airline_icao"`
+	DepartureAirportIata string   `json:"departure_airport_iata" bson:"departure_airport_iata"`
+	DepartureAirportIcao string   `json:"departure_airport_icao" bson:"departure_airport_icao"`
+	ArrivalAirportIata   string   `json:"arrival_airport_iata" bson:"arrival_airport_iata"`
+	ArrivalAirportIcao   string   `json:"arrival_airport_icao" bson:"arrival_airport_icao"`
+	Codeshare            bool     `json:"codeshare" bson:"codeshare"`
+	transfers            int      `json:"transfers" bson:"transfers"`
+	planes               []string `json:"planes" bson:"planes"`
 }
 
 // DataRoutes a list of routes from the database.

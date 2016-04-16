@@ -11,17 +11,17 @@ type InputPricesCheap struct {
 }
 
 type DataFlight struct {
-	Success bool                         `json:"success"`
-	Data    map[string]map[string]Flight `json:"data"`
+	Success bool                         `json:"success" bson:"success"`
+	Data    map[string]map[string]Flight `json:"data" bson:"data"`
 }
 
 type Flight struct {
-	Price        int    `json:"price"`
-	Airline      string `json:"airline"`
-	FlightNumber int    `json:"flight_number"`
-	DepartureAt  string `json:"departure_at"`
-	ReturnAt     string `json:"return_at"`
-	ExpiresAt    string `json:"expires_at"`
+	Price        int    `json:"price" bson:"price"`
+	Airline      string `json:"airline" bson:"airline"`
+	FlightNumber int    `json:"flight_number" bson:"flight_number"`
+	DepartureAt  string `json:"departure_at" bson:"departure_at"`
+	ReturnAt     string `json:"return_at" bson:"return_at"`
+	ExpiresAt    string `json:"expires_at" bson:"expires_at"`
 }
 
 // PricesDirect returns the cheapest ticket direct to the chosen direction with filters by date of departure and return.

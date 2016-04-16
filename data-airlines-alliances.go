@@ -1,8 +1,8 @@
 package aviasales
 
 type Alliance struct {
-	Name     string   `json:"name"`
-	Airlines []string `json:"alias"`
+	Name     string   `json:"name" bson:"name"`
+	Airlines []string `json:"alias" bson:"alias"`
 }
 
 // DataAirlinesAlliances a list of alliances from the database.

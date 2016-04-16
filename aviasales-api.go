@@ -23,8 +23,8 @@ func NewAviasalesApi(token string) *AviasalesApi {
 }
 
 type Coordinates struct {
-	Lon float64 `json:"lon"`
-	Lan float64 `json:"lat"`
+	Lon float64 `json:"lon" bson:"lon"`
+	Lan float64 `json:"lat" bson:"lat"`
 }
 
 func (a *AviasalesApi) SetLogger(logger LoggerInterface) {

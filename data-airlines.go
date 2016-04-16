@@ -1,13 +1,13 @@
 package aviasales
 
 type Airline struct {
-	Name     string `json:"name"`
-	Alias    string `json:"alias"`
-	Iata     string `json:"iata"`
-	Icao     string `json:"icao"`
-	Callsign string `json:"callsign"`
-	Country  string `json:"country"`
-	IsActive bool   `json:"is_active"`
+	Name     string `json:"name" bson:"name"`
+	Alias    string `json:"alias" bson:"alias"`
+	Iata     string `json:"iata" bson:"iata"`
+	Icao     string `json:"icao" bson:"icao"`
+	Callsign string `json:"callsign" bson:"callsign"`
+	Country  string `json:"country" bson:"country"`
+	IsActive bool   `json:"is_active" bson:"is_active"`
 }
 
 // DataAirlines a list of airlines from the database.

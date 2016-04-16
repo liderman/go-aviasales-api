@@ -13,20 +13,20 @@ type InputPricesCalendar struct {
 }
 
 type DataFlightCalendar struct {
-	Success bool                      `json:"success"`
-	Data    map[string]FlightCalendar `json:"data"`
+	Success bool                      `json:"success" bson:"success"`
+	Data    map[string]FlightCalendar `json:"data" bson:"data"`
 }
 
 type FlightCalendar struct {
-	Price        int    `json:"price"`
-	Airline      string `json:"airline"`
-	FlightNumber int    `json:"flight_number"`
-	DepartureAt  string `json:"departure_at"`
-	ReturnAt     string `json:"return_at"`
-	ExpiresAt    string `json:"expires_at"`
-	Origin       string `json:"origin"`
-	Destination  string `json:"destination"`
-	Transfers    int    `json:"transfers"`
+	Price        int    `json:"price" bson:"price"`
+	Airline      string `json:"airline" bson:"airline"`
+	FlightNumber int    `json:"flight_number" bson:"flight_number"`
+	DepartureAt  string `json:"departure_at" bson:"departure_at"`
+	ReturnAt     string `json:"return_at" bson:"return_at"`
+	ExpiresAt    string `json:"expires_at" bson:"expires_at"`
+	Origin       string `json:"origin" bson:"origin"`
+	Destination  string `json:"destination" bson:"destination"`
+	Transfers    int    `json:"transfers" bson:"transfers"`
 }
 
 // PricesCalendar returns the cheapest ticket (without transfer, with one or two changes) for the specified direction for each day of the selected month.

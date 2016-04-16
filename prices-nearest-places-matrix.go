@@ -12,14 +12,14 @@ type InputPricesNearestPlacesMatrix struct {
 }
 
 type DataPriceNearest struct {
-	Success bool           `json:"success"`
-	Data    []PriceNearest `json:"data"`
+	Success bool           `json:"success" bson:"success"`
+	Data    []PriceNearest `json:"data" bson:"data"`
 }
 
 type PriceNearest struct {
-	Origins      []string `json:"origins"`
-	Destinations []string `json:"destinations"`
-	Prices       []Price  `json:"prices"`
+	Origins      []string `json:"origins" bson:"origins"`
+	Destinations []string `json:"destinations" bson:"destinations"`
+	Prices       []Price  `json:"prices" bson:"prices"`
 }
 
 // PricesNearestPlacesMatrix returns prices directions between nearest to the target cities.

@@ -1,8 +1,8 @@
 package aviasales
 
 type Plane struct {
-	Code string `json:"code"`
-	Name string `json:"name"`
+	Code string `json:"code" bson:"code"`
+	Name string `json:"name" bson:"name"`
 }
 
 // DataPlanes a list of planes from the database.

@@ -3,10 +3,10 @@ package aviasales
 import "fmt"
 
 type DataAirlineDirections struct {
-	Success  bool           `json:"success"`
-	Data     map[string]int `json:"data"`
-	Error    string         `json:"error"`
-	Currency string         `json:"currency"`
+	Success  bool           `json:"success" bson:"success"`
+	Data     map[string]int `json:"data" bson:"data"`
+	Error    string         `json:"error" bson:"error"`
+	Currency string         `json:"currency" bson:"currency"`
 }
 
 // AirlineDirections returns the ways in which the airline operates flights sorted by popularity.

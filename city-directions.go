@@ -1,8 +1,8 @@
 package aviasales
 
 type DataCityDirectionsFlight struct {
-	Success bool              `json:"success"`
-	Data    map[string]Flight `json:"data"`
+	Success bool              `json:"success" bson:"success"`
+	Data    map[string]Flight `json:"data" bson:"data"`
 }
 
 // CityDirections returns most popular destinations from the specified city.
