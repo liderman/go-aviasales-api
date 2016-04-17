@@ -38,7 +38,7 @@ func (a *AviasalesApi) getJson(path string, args map[string]string, v interface{
 	}
 	params := url.Values{}
 	for k, v := range args {
-		if args == "" {
+		if v == "" {
 			continue
 		}
 		params.Add(k, v)
