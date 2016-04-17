@@ -12,7 +12,7 @@ type AviasalesApi struct {
 }
 
 type LoggerInterface interface {
-	Debug(interface{})
+	Debug(...interface{})
 }
 
 // NewAviasalesApi creates a new instance AviasalesApi.
@@ -46,7 +46,9 @@ func (a *AviasalesApi) getJson(path string, args map[string]string, v interface{
 
 	apiUrl.RawQuery = params.Encode()
 
-	a.log.Debug("API Send: " + apiUrl.String())
+	if a.log != nil {
+		a.log.Debug("API Send: " + apiUrl.String())
+	}
 	res, err := http.Get(apiUrl.String())
 	if err != nil {
 		return err
