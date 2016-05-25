@@ -1,6 +1,7 @@
 package aviasales
 
 import (
+	"compress/gzip"
 	"encoding/json"
 	"net/http"
 	"net/url"
@@ -49,10 +50,23 @@ func (a *AviasalesApi) getJson(path string, args map[string]string, v interface{
 	if a.log != nil {
 		a.log.Debug("API Send: " + apiUrl.String())
 	}
-	res, err := http.Get(apiUrl.String())
+
+	client := &http.Client{}
+	req, _ := http.NewRequest("GET", apiUrl.String(), nil)
+	req.Header.Set("Accept-Encoding", "gzip, deflate")
+	res, err := client.Do(req)
 	if err != nil {
 		return err
 	}
 	defer res.Body.Close()
+	if res.Header.Get("Content-Encoding") == "gzip" {
+		// decompress data
+		reader, err := gzip.NewReader(res.Body)
+		if err != nil {
+			panic(err)
+		}
+		defer reader.Close()
+		return json.NewDecoder(reader).Decode(&v)
+	}
 	return json.NewDecoder(res.Body).Decode(&v)
 }
