@@ -5,7 +5,16 @@ Golang implementation Aviasales API for data access
 
 Installation
 -----------
-	go get github.com/liderman/go-aviasales-api
+
+Stable release (v1):
+```
+go get gopkg.in/liderman/go-aviasales-api.v1
+```
+
+Non stable release (master branch):
+```
+go get github.com/liderman/go-aviasales-api
+```
 
 Usage
 -----------
